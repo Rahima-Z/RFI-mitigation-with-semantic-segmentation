@@ -29,16 +29,16 @@ def plot_precision_recall_curve(thresholds, precisions, recalls,
 
     axes[0].plot(recalls, precisions, marker="o", markersize=3)
     axes[0].set_xlabel("Rappel (Recall)")
-    axes[0].set_ylabel("Precision")
+    axes[0].set_ylabel("Précision")
     axes[0].set_title(f"{title} — courbe PR")
     axes[0].set_xlim(0, 1)
     axes[0].set_ylim(0, 1)
     axes[0].grid(alpha=0.3)
 
     n = len(thresholds)
-    axes[1].plot(thresholds, precisions[:n], label="Precision", marker="o", markersize=3)
+    axes[1].plot(thresholds, precisions[:n], label="Précision", marker="o", markersize=3)
     axes[1].plot(thresholds, recalls[:n], label="Rappel", marker="o", markersize=3)
-    axes[1].set_xlabel("Seuil de decision")
+    axes[1].set_xlabel("Seuil de décision")
     axes[1].set_ylabel("Score")
     axes[1].set_title(f"{title} — vs seuil")
     axes[1].legend()
@@ -69,7 +69,7 @@ def plot_confusion_matrix(tp, fp, fn, tn, class_names=("background", "flagged"),
     ax.set_yticks([0, 1])
     ax.set_xticklabels(class_names)
     ax.set_yticklabels(class_names)
-    ax.set_xlabel("Predit")
+    ax.set_xlabel("Prédit")
     ax.set_ylabel("Vrai")
     ax.set_title(title)
 
