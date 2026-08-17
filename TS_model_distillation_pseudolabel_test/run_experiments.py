@@ -17,7 +17,7 @@ from visualization import (
 
 
 
-# Configuration de base + familles d'experiences
+# Configuration de base + familles d'expériences
 BASE_CONFIG = dict(
     components={"ce": 1.0},   # loss par defaut : CE seule
     alpha_kd=0.5,               # poids CE/loss vs signal du teacher
@@ -79,7 +79,7 @@ PARAM_BOUNDS = {
 
 
 
-# Hyperparametres fixes du sweep
+# Hyperparamètres fixes du sweep
 
 N_EPOCHS_PER_RUN = 2 #50
 N_FOLDS = 2 #5                   # nombre de folds pour la cross-validation
