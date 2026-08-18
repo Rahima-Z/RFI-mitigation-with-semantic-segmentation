@@ -91,7 +91,7 @@ TEST_FRACTION = 0.2 #0.15            # partie du dataset jamais vue pendant la C
 CV_SEED = 42
 
 # Dossier de sortie
-BASE_OUTPUT_DIR = "/TS_model_distillation_pseudolabel_test/results"
+BASE_OUTPUT_DIR = "TS_model_distillation_pseudolabel_test/results"
 RUN_TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 RUN_DIR = os.path.join(BASE_OUTPUT_DIR, RUN_TIMESTAMP)
 
