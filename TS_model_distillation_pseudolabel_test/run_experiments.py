@@ -23,7 +23,7 @@ BASE_CONFIG = dict(
     alpha_kd=0.5,               # poids CE/loss vs signal du teacher
     temperature_kd=4.0,         # temperature de la KL (ignoree si mode="hard")
     mode="soft",                 # "soft" = distillation KL (soft targets)
-                                  # "hard" = pseudo-labeling (argmax du teacher)
+                                  # "hard" = hard distillation (argmax du teacher)
 )
 
 LOSS_KWARGS = dict(
@@ -55,7 +55,7 @@ TEMPERATURE_EXPERIMENTS = [
 ]
 
 MODE_EXPERIMENTS = [
-    # distillation ou pseudo-labeling : a alpha/temperature/loss fixes (valeurs de BASE_CONFIG)
+    # soft ou hard distillation : a alpha/temperature/loss fixes (valeurs de BASE_CONFIG)
     ("mode_soft", dict(mode="soft")),
     ("mode_hard", dict(mode="hard")),
 ]
