@@ -61,7 +61,7 @@ MODE_EXPERIMENTS = [
 ]
 
 #Choisir la liste a lancer
-EXPERIMENTS = LOSS_EXPERIMENTS[:2] #LOSS_EXPERIMENTS
+EXPERIMENTS = LOSS_EXPERIMENTS #LOSS_EXPERIMENTS
 # EXPERIMENTS = ALPHA_EXPERIMENTS
 # EXPERIMENTS = TEMPERATURE_EXPERIMENTS
 # EXPERIMENTS = MODE_EXPERIMENTS
@@ -70,7 +70,7 @@ EXPERIMENTS = LOSS_EXPERIMENTS[:2] #LOSS_EXPERIMENTS
 # Coarse-to-fine : affine alpha_kd ou temperature_kd autour du meilleur point de la grille. Ne s'applique qu'a un paramètre continu a la fois
 COARSE_TO_FINE = False           # True pour activer l'affinage
 COARSE_TO_FINE_PARAM = "alpha_kd"  # "alpha_kd" ou "temperature_kd"
-N_FINE_POINTS = 5                # nombre de points testés dans la passe fine
+N_FINE_POINTS = 10                # nombre de points testés dans la passe fine
 # Bornes valides pour chaque paramètre (pour ne pas proposer devvaleurs hors domaine lors de l'affinage, ex. alpha < 0 ou > 1)
 PARAM_BOUNDS = {
     "alpha_kd": (0.0, 1.0),
@@ -81,12 +81,12 @@ PARAM_BOUNDS = {
 
 # Hyperparamètres fixes du sweep
 
-N_EPOCHS_PER_RUN = 2 #50
-N_FOLDS = 2 #5                   # nombre de folds pour la cross-validation
+N_EPOCHS_PER_RUN = 50 #2
+N_FOLDS =  5 #2               # nombre de folds pour la cross-validation
 LR = 1e-3
-BATCH_SIZE = 4 #64
+BATCH_SIZE = 64 #4
 BEST_METRIC = "dice_class1"    # critère pour la meilleure epoch et le meilleur fold
-TOP_K_TO_PLOT = 2 #3
+TOP_K_TO_PLOT = 3 #2
 TEST_FRACTION = 0.2 #0.15            # partie du dataset jamais vue pendant la CV
 CV_SEED = 42
 
@@ -330,7 +330,7 @@ def main():
 
 
     #Réduction du dataset pour tester
-    TEST = True         # mettre a False pour l'entraînement complet
+    TEST = False #True         # mettre a False pour l'entraînement complet
     TEST_SIZE = 40 #200       # nombre de données a garder en mode test
 
     if TEST:
